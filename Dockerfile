@@ -36,7 +36,7 @@ COPY --from=builder /etc/group /etc/group
 COPY --from=builder /usr/share/zoneinfo /usr/share/zoneinfo
 
 COPY --from=builder --chown=appuser /ircd /ircd
-COPY --from=ergo /app/languages /languages
+COPY --from=ergo /app/languages /ircd-bin/languages
 COPY --from=ergo /app/main /ergo
 COPY --from=certwrapper /app/main /certwrapper
 
@@ -44,4 +44,4 @@ WORKDIR /ircd
 
 VOLUME /ircd
 
-CMD ["/certwrapper", "/ergo", "run"]
+CMD ["/certwrapper", "/ergo", "run", "--conf", "/ircd/ircd.yaml"]
