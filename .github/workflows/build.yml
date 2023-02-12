@@ -7,5 +7,5 @@ on:
       - v*
 jobs:
   container:
-    uses: greboid/.github/.github/workflows/checkout-build-and-push-docker.yml@master
+    uses: greboid/.github/.github/workflows/docker.yml@master
     secrets: inherit
