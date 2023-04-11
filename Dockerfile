@@ -8,7 +8,7 @@ WORKDIR /app
 RUN git clone --no-tags --branch v4.1.0 --single-branch --depth 1 https://github.com/csmith/certwrapper .
 RUN CGO_ENABLED=0 GOOS=linux go build -trimpath -gcflags=./dontoptimizeme=-N -ldflags=-s -o /app/main .
 
-FROM ghcr.io/greboid/dockerfiles/golang@sha256:b39e962ca9b7c2d31ba231c4912fc7831d59dfbb5dcd5e3fa9bba79bd51cc32c as builder
+FROM ghcr.io/greboid/dockerfiles/golang@sha256:25cefe2da86b16981762f77a2d8b1ed2b611e62d92e379dd78d05c3211ca4a21 as builder
 
 WORKDIR /app
 
